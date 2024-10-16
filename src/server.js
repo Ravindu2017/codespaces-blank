@@ -1,11 +1,13 @@
+require('dotenv').config();
+
 const express = require('express');
 const axios = require('axios');
 const app = express();
 const port = 3000;  // Backend port
 
 // Reddit API credentials
-const clientId = 'your-client-id';
-const clientSecret = 'your-client-secret';
+const clientId = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
 
 // Function to get a Reddit token
 async function getRedditToken() {
